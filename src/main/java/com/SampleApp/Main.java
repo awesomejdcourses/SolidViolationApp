@@ -3,14 +3,16 @@ package com.SampleApp;
 public class Main {
 
     public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle();
-        rectangle.setWidth(10);
-        rectangle.setHeight(5);
-        rectangle.plotToConsole();
+        ILogger consoleLogger = new ConsoleLogger();
+        IOutput consoleOutput = new ConsoleOutput();
 
-        Square square = new Square();
-        square.setWidth(5);
-        square.setHeight(5);
-        square.plotToConsole();
+        new Rectangle(10,
+                      5,
+                      consoleOutput,
+                      consoleLogger).plotToConsole();
+
+        new Square(5,
+                   consoleOutput,
+                   consoleLogger).plotToConsole();
     }
 }
