@@ -1,10 +1,6 @@
 package com.SampleApp;
 
-public class ConsoleLogger implements IOutputAndLog {
-    @Override
-    public void write(String text) {
-        throw new UnsupportedOperationException();
-    }
+public class ConsoleLogger implements ILogger {
 
     @Override
     public void log(String text) {
